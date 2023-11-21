@@ -24,7 +24,7 @@ public abstract class MixinLivingEntity extends Entity {
         super(t, l);
     }
 
-    @Inject(method = "baseTick", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/profiling/ProfilerFiller;push(Ljava/lang/String;)V"), cancellable = true)
+    @Inject(method = "baseTick", at = @At("HEAD"), cancellable = true)
     private void inject$baseTick(CallbackInfo ci) {
         if (!isAlive()) return;
         if (!((LivingEntity) (Object) this instanceof Player player)) return;
