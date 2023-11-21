@@ -28,13 +28,13 @@ public abstract class MixinLivingEntity extends Entity {
     private void inject$baseTick(CallbackInfo ci) {
         if (!isAlive()) return;
         if (!((LivingEntity) (Object) this instanceof Player player)) return;
-        final WorldBorder border = level().getWorldBorder();
+        final WorldBorder border = level.getWorldBorder();
         if (border.isWithinBounds(getBoundingBox())) return;
         ci.cancel();
-        if (level().isClientSide) return;
+        if (level.isClientSide) return;
         final double targetX = Mth.clamp(position().x, border.getMinX() + .5, border.getMaxX() - .5);
         final double targetZ = Mth.clamp(position().z, border.getMinZ() + .5, border.getMaxZ() - .5);
-        final double targetY = level().getHeight(Heightmap.Types.MOTION_BLOCKING,
+        final double targetY = level.getHeight(Heightmap.Types.MOTION_BLOCKING,
                 (int) Math.floor(targetX), (int) Math.floor(targetZ)) + 1.0;
         teleportTo(targetX, targetY, targetZ);
         player.playSound(SoundEvents.ENDERMAN_TELEPORT, 1.0F, 1.0F);
