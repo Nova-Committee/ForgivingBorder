@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "committee.nova.forgivingborder.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "forgivingborder.refmap.json",
+  "mixins": [
+    "MixinLivingEntity"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
