@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "forgivingborder",
+  "version": "${version}",
+  "name": "forgivingborder",
+  "description": "Make the world border no longer hurt the players but teleport them to a safe position.",
+  "authors": [
+    "Tapio"
+  ],
+  "contact": {},
+  "license": "Nova-Relay-License-1.0",
+  "environment": "*",
+  "mixins": [
+    "forgivingborder.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": "*",
+    "minecraft": "*"
+  }
+}
